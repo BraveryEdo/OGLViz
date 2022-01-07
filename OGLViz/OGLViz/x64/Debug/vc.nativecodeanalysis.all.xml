@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\LiquidState\source\repos\OGLViz\include\</FILEPATH>
+      <FILENAME>fft.h</FILENAME>
+      <LINE>360</LINE>
+      <COLUMN>37</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Recorder::{ctor}</FUNCTION>
+    <DECORATED>??0Recorder@@QEAA@HHHH@Z</DECORATED>
+    <FUNCLINE>346</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\LiquidState\source\repos\OGLViz\OGLViz\</FILEPATH>
+      <FILENAME>Fft.cpp</FILENAME>
+      <LINE>43</LINE>
+      <COLUMN>33</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Fft::{ctor}</FUNCTION>
+    <DECORATED>??0Fft@@QEAA@HJ@Z</DECORATED>
+    <FUNCLINE>19</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\LiquidState\source\repos\OGLViz\OGLViz\</FILEPATH>
+      <FILENAME>Fft.cpp</FILENAME>
+      <LINE>98</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Fft::CopyIn</FUNCTION>
+    <DECORATED>?CopyIn@Fft@@QEAAXAEAVSampleIter@@@Z</DECORATED>
+    <FUNCLINE>89</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

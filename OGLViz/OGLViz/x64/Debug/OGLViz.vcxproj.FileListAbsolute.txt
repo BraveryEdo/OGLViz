@@ -1,0 +1,2 @@
+C:\Users\LiquidState\source\repos\OGLViz\x64\Debug\OGLViz.exe.lastcodeanalysissucceeded
+C:\Users\LiquidState\source\repos\OGLViz\OGLViz\x64\Debug\NativeCodeAnalysis.read.1.tlog
