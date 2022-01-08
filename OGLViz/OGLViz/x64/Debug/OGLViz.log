@@ -1,8 +1,0 @@
-﻿  Fft.cpp
-  main.cpp
-  Running Code Analysis for C/C++...
-  Generating Code...
-  OGLViz.vcxproj -> C:\Users\LiquidState\source\repos\OGLViz\x64\Debug\OGLViz.exe
-C:\Users\LiquidState\source\repos\OGLViz\include\fft.h(360): warning C26451: Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).
-C:\Users\LiquidState\source\repos\OGLViz\OGLViz\Fft.cpp(43): warning C26451: Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).
-C:\Users\LiquidState\source\repos\OGLViz\OGLViz\Fft.cpp(98): warning C26451: Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).

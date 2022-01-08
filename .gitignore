@@ -1,0 +1,10 @@
+ *.[oa]
+ *~
+*/Debug/
+*/debug/
+debug*
+Debug*
+Debug/
+Debug/*
+.vs/
+.vs/*
