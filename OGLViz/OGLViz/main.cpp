@@ -6,9 +6,8 @@
 #include <GLM\glm\glm.hpp>
 #include <GL\glut.h>
 #include "shaders\shader.hpp"
-using namespace glm;
 
-GLuint programID = LoadShaders("vertexShader.txt", "fragmentShader.txt");
+using namespace glm;
 
 int main(int argc, char* argv[]) {
 	fprintf(stdout, "Visualizer Project by LiquidState, C++ build utilizing OpenGL");//\nUsing GLEW version: %s\n", glewGetString(GLEW_VERSION));
@@ -57,6 +56,11 @@ int main(int argc, char* argv[]) {
 
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+
+
+	GLuint programID = LoadShaders("..\\Include\\shaders\\vertexShader.txt", "..\\Include\\shaders\\fragmentShader.txt");
 
 	// An array of 3 vectors which represents 3 vertices
 	static const GLfloat g_vertex_buffer_data[] = {

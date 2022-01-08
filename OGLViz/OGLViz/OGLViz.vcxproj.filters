@@ -33,7 +33,5 @@
   <ItemGroup>
     <Text Include="shaders\fragmentShader.txt" />
     <Text Include="shaders\vertexShader.txt" />
-    <Text Include="..\Include\shaders\vertexShader.txt" />
-    <Text Include="..\Include\shaders\fragmentShader.txt" />
   </ItemGroup>
 </Project>

@@ -151,8 +151,6 @@
     <ClInclude Include="shaders\shader.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Include\shaders\fragmentShader.txt" />
-    <Text Include="..\Include\shaders\vertexShader.txt" />
     <Text Include="shaders\fragmentShader.txt" />
     <Text Include="shaders\vertexShader.txt" />
   </ItemGroup>
