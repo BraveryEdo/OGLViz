@@ -8,7 +8,7 @@
 #include "fft.h"
 #include <cstring>
 #include <iostream>
-//#include "recorder.h"
+//#include "recorder.h" remove dis shit
 
 
 // log (1) = 0, log(2) = 1, log(3) = 2, log(4) = 2 ...

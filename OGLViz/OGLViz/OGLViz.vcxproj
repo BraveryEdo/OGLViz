@@ -143,8 +143,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Include\shaders\shader.cpp" />
     <ClCompile Include="Fft.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shaders\shader.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Include\shaders\fragmentShader.txt" />
+    <Text Include="..\Include\shaders\vertexShader.txt" />
+    <Text Include="shaders\fragmentShader.txt" />
+    <Text Include="shaders\vertexShader.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -21,5 +21,19 @@
     <ClCompile Include="Fft.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Include\shaders\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shaders\shader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="shaders\fragmentShader.txt" />
+    <Text Include="shaders\vertexShader.txt" />
+    <Text Include="..\Include\shaders\vertexShader.txt" />
+    <Text Include="..\Include\shaders\fragmentShader.txt" />
   </ItemGroup>
 </Project>
