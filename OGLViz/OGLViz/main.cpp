@@ -11,18 +11,16 @@
 
 //makes using GL Math (GLM) for vectors easier so a bunch of functions don't need glm:: prepended
 using namespace glm;
+GLFWwindow* window;
 
-int main(int argc, char* argv[]) {
-	fprintf(stdout, "Visualizer Project by LiquidState, C++ build utilizing OpenGL\n");
-	
-	//Boiler Plate setup for glfw, window, context, settings ======================================================================================
-	glewExperimental = true; // Needed for core profile
-	float width = 1024.0f;
-	float height = 768.0f;
+int initWindow() {
+	//Boiler Plate setup for glfw, window, context, settings 
+	GLfloat width = 1024.0f;
+	GLfloat height = 768.0f;
 	//initalize GL Frame Work (GLFW)
-	if (!glfwInit()){
+	if (!glfwInit()) {
 		fprintf(stderr, "Failed to initialize GLFW\n");
-		return -1;
+		return 0;
 	}
 	//GLFW initial settings
 	glfwWindowHint(GLFW_SAMPLES, 4); // 4x antialiasing
@@ -32,25 +30,67 @@ int main(int argc, char* argv[]) {
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // We don't want the old OpenGL 
 
 	// Open a window and create its OpenGL context
-	GLFWwindow* window; // (In the accompanying (tutorial) source code, this variable is global for simplicity)
+	 // (In the accompanying (tutorial) source code, this variable is global for simplicity)
 	window = glfwCreateWindow(width, height, "LIQUIDSTATE", NULL, NULL);
 	if (window == NULL) {
 		fprintf(stderr, "Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version\n");
 		glfwTerminate();
-		return -1;
+		return 0;
 	}
-	glfwMakeContextCurrent(window); 
-	
+	glfwMakeContextCurrent(window);
+
+	return 1;
+}
+
+int initGlew() {
 	// Initialize GL Eextension Wrangler (GLEW)
 	glewExperimental = true; // Needed in older core profile, shouldn't be neccessary in newer vesion (if only using core profile)
 	if (glewInit() != GLEW_OK) {
 		fprintf(stderr, "Failed to initialize GLEW\n");
-		return -1;
+		return 0;
 	}
+	return 1;
+}
+
+int getInput() {
 	// Ensure we can capture the escape key being pressed below
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+	return 1;
+}
+
+
+int main(int argc, char* argv[]) {
+	fprintf(stdout, "Visualizer Project by LiquidState, C++ build utilizing OpenGL\n");
 	
-	// Vertex Array Obj (VAO) needs to be right after window creation
+	if (!initWindow()) {
+		fprintf(stdout, "Main window initialization failed\n");
+		return -1;
+	}
+	
+	if (!initGlew()) {
+		fprintf(stdout, "Main glew initialization failed \n");
+		return -1;
+	}
+
+	if (!getInput()) {
+		fprintf(stdout, "Main input handler initialization failed\n");
+		return -1;
+	}
+	
+	// load in shaders
+	GLuint programID = LoadShaders("..\\Include\\shaders\\vertexShader.txt", "..\\Include\\shaders\\fragmentShader.txt");
+
+	// make sure its clear
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+
+	// An array of 3 vectors which represents 3 vertices
+	static const GLfloat g_vertex_buffer_data[] = {
+	   -1.0f, -1.0f, 0.0f,
+	   1.0f, -1.0f, 0.0f,
+	   0.0f,  1.0f, 0.0f,
+	
+	};
+	// Vertex Array Obj (VAO) 
 	GLuint VertexArrayID;
 	glGenVertexArrays(1, &VertexArrayID);
 	glBindVertexArray(VertexArrayID);
@@ -64,18 +104,6 @@ int main(int argc, char* argv[]) {
 	*/
 
 
-	// load in shaders
-	GLuint programID = LoadShaders("..\\Include\\shaders\\vertexShader.txt", "..\\Include\\shaders\\fragmentShader.txt");
-
-	// make sure its clear
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-
-	// An array of 3 vectors which represents 3 vertices
-	static const GLfloat g_vertex_buffer_data[] = {
-	   -1.0f, -1.0f, 0.0f,
-	   1.0f, -1.0f, 0.0f,
-	   0.0f,  1.0f, 0.0f,
-	};
 	// This will identify our vertex buffer
 	GLuint vertexbuffer;
 	// Generate 1 buffer, put the resulting identifier in vertexbuffer
@@ -95,9 +123,9 @@ int main(int argc, char* argv[]) {
 
 		// Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
 		//mat4 Projection = perspective(radians(45.0f), (float)4.0 / (float)3.0, 0.1f, 100.0f);
-		mat4 Projection = ortho(0.0f, 800.0f, 0.5f, 600.0f);
+		//mat4 Projection = ortho(0.0f, 800.0f, 0.5f, 600.0f);
 		// Or, for an ortho camera :
-		//glm::mat4 Projection = glm::ortho(-10.0f,10.0f,-10.0f,10.0f,0.0f,100.0f); // In world coordinates
+		mat4 Projection = glm::ortho(-10.0f,10.0f,-10.0f,10.0f,0.0f,100.0f); // In world coordinates
 
 		// Camera matrix
 		mat4 View = lookAt(
@@ -156,4 +184,5 @@ int main(int argc, char* argv[]) {
 
 
 	return 0;
-}  
+}
+
