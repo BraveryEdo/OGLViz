@@ -146,8 +146,10 @@
     <ClCompile Include="..\Include\shaders\shader.cpp" />
     <ClCompile Include="Fft.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="control.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="control.hpp" />
     <ClInclude Include="shaders\shader.hpp" />
   </ItemGroup>
   <ItemGroup>

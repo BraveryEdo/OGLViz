@@ -1,12 +1,22 @@
 #version 330 core
-
+// Interpolated values from the vertex shaders
+//in vec3 fragmentColor;
+in vec2 UV;
 // Ouput data
 out vec3 color;
 
+uniform sampler2D myTextureSampler;
 void main()
 {
-
-	// Output color = red 
-	color = vec3(1,0,0);
+	// Output color = color specified in the vertex shader,
+    // interpolated between all 3 surrounding vertices
+	
+	//INVERT UV 1.0f-uv.y
+	//DXT compression comes from the DirectX world, 
+	//where the V texture coordinate is inversed compared to OpenGL. 
+	//So if you use compressed textures, you’ll have to use 
+	//( coord.u, 1.0-coord.v) to fetch the correct texel. 
+	//You can do this whenever you want : in your export script, in your loader, in your shader…
+	color = texture(myTextureSampler, UV).rgb;
 
 }
