@@ -147,9 +147,15 @@
     <ClCompile Include="Fft.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="control.cpp" />
+    <ClCompile Include="objloader.cpp" />
+    <ClCompile Include="vboindexer.cpp" />
+    <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="control.hpp" />
+    <ClInclude Include="vboindexer.hpp" />
+    <ClInclude Include="texture.hpp" />
+    <ClInclude Include="objloader.hpp" />
     <ClInclude Include="shaders\shader.hpp" />
   </ItemGroup>
   <ItemGroup>

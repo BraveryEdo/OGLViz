@@ -27,12 +27,30 @@
     <ClCompile Include="control.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="objloader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vboindexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shaders\shader.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="control.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objloader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vboindexer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
