@@ -88,9 +88,9 @@ int setupFlags() {
 }
 
 
-const char* vertexShaderLocation = "..\\Include\\shaders\\vertexShader.txt";
-const char* fragmentShaderLocation = "..\\Include\\shaders\\fragmentShader.txt";
-const char* uvbmpLocation = "resources\\uvtemplate.bmp";
+const char* vertexShaderLocation = "shaders\\vertexShader.txt";
+const char* fragmentShaderLocation = "shaders\\fragmentShader.txt";
+const char* uvLocation = "resources\\uvmap.DDS";
 
 int main(int argc, char* argv[]) {
 	fprintf(stdout, "Visualizer Project by LiquidState, C++ build utilizing OpenGL\nShoutout to opengl-tutorial.org\n");
@@ -125,7 +125,7 @@ int main(int argc, char* argv[]) {
 	// Get a handle for our "MVP" uniform
 	GLuint MatrixID = glGetUniformLocation(programID, "MVP");
 	// load in texture
-	GLuint Texture = loadBMP_custom(uvbmpLocation);
+	GLuint Texture = loadDDS(uvLocation);
 
 	// Get a handle for our "myTextureSampler" uniform
 	GLuint TextureID = glGetUniformLocation(programID, "myTextureSampler");

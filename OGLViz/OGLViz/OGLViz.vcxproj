@@ -143,11 +143,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Include\shaders\shader.cpp" />
     <ClCompile Include="fft.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="control.cpp" />
     <ClCompile Include="objloader.cpp" />
+    <ClCompile Include="shaders\shader.cpp" />
     <ClCompile Include="vboindexer.cpp" />
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
@@ -169,6 +169,7 @@
     </Media>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="resources\uvmap.DDS" />
     <Image Include="resources\uvtemplate.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
