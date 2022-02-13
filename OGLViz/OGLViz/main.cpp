@@ -510,7 +510,7 @@ int main(int argc, char* argv[]) {
 			(void*)0                          // array buffer offset
 		);
 
-		// Draw the triangle !
+		// DRAW
 		glDrawArrays(GL_TRIANGLES, 0, 12 * 3); // 12*3 indices starting at 0 -> 12 triangles
 
 		glDisableVertexAttribArray(0);
