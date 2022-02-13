@@ -8,13 +8,13 @@ using namespace glm;
 
 #include "control.hpp"
 
-glm::mat4 ViewMatrix;
-glm::mat4 ProjectionMatrix;
+mat4 ViewMatrix;
+mat4 ProjectionMatrix;
 
-glm::mat4 getViewMatrix() {
+mat4 getViewMatrix() {
 	return ViewMatrix;
 }
-glm::mat4 getProjectionMatrix() {
+mat4 getProjectionMatrix() {
 	return ProjectionMatrix;
 }
 
@@ -29,7 +29,7 @@ glm::mat4 getProjectionMatrix() {
 */
 
 // Initial position : on +Z
-glm::vec3 position = glm::vec3(0, 0, 5);
+vec3 position = vec3(0, 0, 5);
 // Initial horizontal angle : toward -Z
 float horizontalAngle = 3.14f;
 // Initial vertical angle : none
@@ -67,21 +67,21 @@ void computeMatricesFromInputs() {
 	verticalAngle = clamp(verticalAngle, -3.14f/4.0f, 3.14f/4.0f);
 
 	// Direction : Spherical coordinates to Cartesian coordinates conversion
-	glm::vec3 direction(
+	vec3 direction(
 		cos(verticalAngle) * sin(horizontalAngle),
 		sin(verticalAngle),
 		cos(verticalAngle) * cos(horizontalAngle)
 	);
 
 	// Right vector
-	glm::vec3 right = glm::vec3(
+	vec3 right = vec3(
 		sin(horizontalAngle - 3.14f / 2.0f),
 		0,
 		cos(horizontalAngle - 3.14f / 2.0f)
 	);
 
 	// Up vector
-	glm::vec3 up = glm::cross(right, direction);
+	vec3 up = cross(right, direction);
 
 	// Move forward
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
@@ -103,9 +103,9 @@ void computeMatricesFromInputs() {
 	float FoV = initialFoV;// - 5 * glfwGetMouseWheel(); // Now GLFW 3 requires setting up a callback for this. It's a bit too complicated for this beginner's tutorial, so it's disabled instead.
 
 	// Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
-	ProjectionMatrix = glm::perspective(glm::radians(FoV), 4.0f / 3.0f, 0.1f, 100.0f);
+	ProjectionMatrix = perspective(radians(FoV), 4.0f / 3.0f, 0.1f, 100.0f);
 	// Camera matrix
-	ViewMatrix = glm::lookAt(
+	ViewMatrix = lookAt(
 		position,           // Camera is here
 		position + direction, // and looks here : at the same position, plus "direction"
 		up                  // Head is up (set to 0,-1,0 to look upside-down)

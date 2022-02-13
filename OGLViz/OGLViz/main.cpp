@@ -3,12 +3,16 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "GL/glew.h"
+#include "GL/glut.h"
 #include "GLFW/glfw3.h"
 #include "GLM/glm/glm.hpp"
+
 #include "GLM/glm/gtx/transform.hpp" 
 #include "GLM/glm/gtc/matrix_transform.hpp" 
-#include "GL/glut.h"
+
+
 #include "shaders/shader.hpp"
 #include "control.hpp"
 
@@ -471,10 +475,10 @@ int main(int argc, char* argv[]) {
 		glUseProgram(programID);
 		// Compute the MVP matrix from keyboard and mouse input
 		computeMatricesFromInputs();
-		glm::mat4 ProjectionMatrix = getProjectionMatrix();
-		glm::mat4 ViewMatrix = getViewMatrix();
-		glm::mat4 ModelMatrix = glm::mat4(1.0f);
-		glm::mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
+		mat4 ProjectionMatrix = getProjectionMatrix();
+		mat4 ViewMatrix = getViewMatrix();
+		mat4 ModelMatrix = mat4(1.0f);
+		mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
 
 		// Send our transformation to the currently bound shader, 
 		// in the "MVP" uniform
