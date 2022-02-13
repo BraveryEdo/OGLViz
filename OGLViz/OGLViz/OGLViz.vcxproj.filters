@@ -56,10 +56,15 @@
     <ClInclude Include="headers\fft.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\shader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="shaders\fragmentShader.txt" />
     <Text Include="shaders\vertexShader.txt" />
+    <Text Include="shaders\fragShader.txt" />
+    <Text Include="shaders\vtxShader.txt" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="resources\cube.obj" />

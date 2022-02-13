@@ -155,13 +155,16 @@
     <ClInclude Include="headers\control.hpp" />
     <ClInclude Include="headers\fft.hpp" />
     <ClInclude Include="headers\objloader.hpp" />
+    <ClInclude Include="headers\shader.hpp" />
     <ClInclude Include="headers\texture.hpp" />
     <ClInclude Include="headers\vboindexer.hpp" />
     <ClInclude Include="shaders\shader.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="shaders\fragmentShader.txt" />
+    <Text Include="shaders\fragShader.txt" />
     <Text Include="shaders\vertexShader.txt" />
+    <Text Include="shaders\vtxShader.txt" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="resources\cube.obj">
