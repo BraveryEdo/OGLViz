@@ -6,19 +6,20 @@
 #include <vector>
 #include <algorithm>
 
-#include "GL/glew.h"
-#include "GL/glut.h"
-#include "GLFW/glfw3.h"
-#include "GLM/glm/glm.hpp"
+#include "GL\\glew.h"
+#include "GL\\glut.h"
+#include "GLFW\\glfw3.h"
+#include "GLM\\glm\\glm.hpp"
 
-#include "GLM/glm/gtx/transform.hpp" 
-#include "GLM/glm/gtc/matrix_transform.hpp" 
+#include "GLM\\glm\\gtx\\transform.hpp" 
+#include "GLM\\glm\\gtc\\matrix_transform.hpp" 
 
 
-#include "shaders/shader.hpp"
-#include "texture.hpp"
-#include "control.hpp"
-#include "objloader.hpp"
+#include "shaders\\shader.hpp"
+#include "headers\\texture.hpp"
+#include "headers\\control.hpp"
+#include "headers\\objloader.hpp"
+#include "headers\\vboindexer.hpp"
 
 //makes using GL Math (GLM) for vectors easier so a bunch of functions don't need glm:: prepended
 using namespace glm;
@@ -89,7 +90,7 @@ int setupFlags() {
 
 const char* vertexShaderLocation = "..\\Include\\shaders\\vertexShader.txt";
 const char* fragmentShaderLocation = "..\\Include\\shaders\\fragmentShader.txt";
-const char* uvbmpLocation = "uvtemplate.bmp";
+const char* uvbmpLocation = "resources\\uvtemplate.bmp";
 
 int main(int argc, char* argv[]) {
 	fprintf(stdout, "Visualizer Project by LiquidState, C++ build utilizing OpenGL\nShoutout to opengl-tutorial.org\n");
