@@ -55,7 +55,7 @@ bool loadOBJ(
 
 		char lineHeader[128];
 		// read the first word of the line
-		int res = fscanf_s(file, "%s", lineHeader);
+		int res = fscanf_s(file, "%s", lineHeader, _countof(lineHeader));
 		if (res == EOF)
 			break; // EOF = End Of File. Quit the loop.
 

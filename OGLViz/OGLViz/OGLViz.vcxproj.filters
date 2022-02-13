@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Fft.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\Include\shaders\shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -36,26 +33,40 @@
     <ClCompile Include="vboindexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fft.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shaders\shader.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="control.hpp">
+    <ClInclude Include="headers\control.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="objloader.hpp">
+    <ClInclude Include="headers\objloader.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="texture.hpp">
+    <ClInclude Include="headers\texture.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vboindexer.hpp">
+    <ClInclude Include="headers\vboindexer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\fft.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="shaders\fragmentShader.txt" />
     <Text Include="shaders\vertexShader.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="resources\cube.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\uvtemplate.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

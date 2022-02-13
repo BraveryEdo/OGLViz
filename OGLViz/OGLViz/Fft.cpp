@@ -5,7 +5,7 @@
 //  (c) Reliable Software, 1996
 //------------------------------------
 #include "windows.h"
-#include "fft.h"
+#include "headers\\fft.hpp"
 #include <cstring>
 #include <iostream>
 //#include "recorder.h" remove dis shit

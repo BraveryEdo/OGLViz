@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\shaders\shader.cpp" />
-    <ClCompile Include="Fft.cpp" />
+    <ClCompile Include="fft.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="control.cpp" />
     <ClCompile Include="objloader.cpp" />
@@ -152,15 +152,24 @@
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="control.hpp" />
-    <ClInclude Include="vboindexer.hpp" />
-    <ClInclude Include="texture.hpp" />
-    <ClInclude Include="objloader.hpp" />
+    <ClInclude Include="headers\control.hpp" />
+    <ClInclude Include="headers\fft.hpp" />
+    <ClInclude Include="headers\objloader.hpp" />
+    <ClInclude Include="headers\texture.hpp" />
+    <ClInclude Include="headers\vboindexer.hpp" />
     <ClInclude Include="shaders\shader.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="shaders\fragmentShader.txt" />
     <Text Include="shaders\vertexShader.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="resources\cube.obj">
+      <FileType>Document</FileType>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\uvtemplate.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
