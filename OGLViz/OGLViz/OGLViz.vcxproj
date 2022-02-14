@@ -169,11 +169,17 @@
   <ItemGroup>
     <Media Include="resources\cube.obj">
       <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Media>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\uvmap.DDS" />
     <Image Include="resources\uvtemplate.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="resources\suzanne.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Object>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

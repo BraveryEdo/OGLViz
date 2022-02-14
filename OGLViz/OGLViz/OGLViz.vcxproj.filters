@@ -75,4 +75,7 @@
     </Image>
     <Image Include="resources\uvmap.DDS" />
   </ItemGroup>
+  <ItemGroup>
+    <Object Include="resources\suzanne.obj" />
+  </ItemGroup>
 </Project>
